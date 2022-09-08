@@ -1,2 +1,6 @@
 **results/
 **/.ipynb_checkpoints
+dist
+build
+*.egg**
+.vscode
