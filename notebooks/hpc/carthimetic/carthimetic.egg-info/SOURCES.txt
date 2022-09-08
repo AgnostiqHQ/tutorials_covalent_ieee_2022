@@ -1,0 +1,6 @@
+main.c
+setup.py
+carthimetic.egg-info/PKG-INFO
+carthimetic.egg-info/SOURCES.txt
+carthimetic.egg-info/dependency_links.txt
+carthimetic.egg-info/top_level.txt
