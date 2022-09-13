@@ -1,0 +1,6 @@
+@ct.electron
+def similarity_learning_dataset(folder_dataset, transformation):
+    dataset = SimilarityModelDataset(folder_dataset, transformation)
+    return dataset
+
+

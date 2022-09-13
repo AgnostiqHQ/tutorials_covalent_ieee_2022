@@ -1,0 +1,11 @@
+/Users/jbaker/opt/miniconda3/envs/algo-time-series/lib/python3.10/site-packages/distributed/worker.py:4798: UserWarning: Large object of size 1.16 MiB detected in task graph: 
+  (functools.partial(<function wrapper_fn at 0x7f91e ... e14d10c0>], {})
+Consider scattering large objects ahead of time
+with client.scatter to reduce scheduler burden and 
+keep data on workers
+
+    future = client.submit(func, big_data)    # bad
+
+    big_future = client.scatter(big_data)     # good
+    future = client.submit(func, big_future)  # good
+  warnings.warn(

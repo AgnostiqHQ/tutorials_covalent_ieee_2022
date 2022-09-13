@@ -1,0 +1,13 @@
+@ct.lattice
+def similarity_experiment(num_images, trained_net_c, trained_opt_q):
+    image_pairs = generate_left_right_transition(num_images)
+    dataloader_test = torch_dataloader(image_pairs, shuffle=False, batch_size=1)
+    results_c = get_testing_results(dataloader_test, trained_net)
+    results_q = get_test_results_quantum(dataloader_test, trained_opt_q.param_groups[0]['params'],
+                                         prob_func=get_quantum_prob, 
+                                         predict_func=quantum_predict,
+                                         wires=dev.wires,
+                                         measure_bits=2)
+    return results_c, results_q
+
+

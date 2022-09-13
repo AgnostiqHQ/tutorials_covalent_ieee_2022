@@ -1,0 +1,31 @@
+@ct.lattice
+def quantum_workflow(train_path, test_path, train_batch, pytorch_optimizer, epochs, lr, print_intermediate):
+
+    # Get training and testing dataloaders
+    folder_dataset, transformation = file_to_pytorch_transform(train_path)
+    dataset = similarity_learning_dataset(folder_dataset, transformation)
+    dataloader_train = torch_dataloader(dataset, train_batch)
+
+    folder_dataset, transformation = file_to_pytorch_transform(test_path)
+    dataset = similarity_learning_dataset(folder_dataset, transformation)
+    dataloader_test = torch_dataloader(dataset, 1)
+
+    # Get intial parameters for quantum net. We hardcode the 5 qubit 2 layer QAOA ansatz.
+    alpha1, alpha2 = get_random_init_params(5, 2)
+
+    # pass relevant electron functions to training routine. Measure_bits=2 is also hardcoded
+    loss_history, opt = train_quantum_net(lr=lr, init_params=[alpha1, alpha2],
+                                          dataloader_train=dataloader_train,
+                                          batch_cost_func=quantum_cost, # is an electron function
+                                          similarity_circuit=similarity_circuit, # is an electron function
+                                          measure_bits=2, epochs=epochs,
+                                          pytorch_optimizer=pytorch_optimizer,
+                                          print_intermediate=False)
+    results = get_test_results_quantum(dataloader_test, opt.param_groups[0]['params'],
+                                       prob_func=get_quantum_prob, 
+                                       predict_func=quantum_predict,
+                                       wires=dev.wires,
+                                       measure_bits=2)
+    return results, loss_history, opt
+
+

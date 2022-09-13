@@ -1,0 +1,7 @@
+@ct.electron
+def get_random_init_params(n_qubits, layers, ansatz=qml.QAOAEmbedding):
+    alpha1 = torch.tensor(np.random.uniform(size=ansatz.shape(layers, n_qubits)), requires_grad=True)
+    alpha2 = torch.tensor(np.random.uniform(size=ansatz.shape(layers, n_qubits)), requires_grad=True)
+    return alpha1, alpha2
+
+

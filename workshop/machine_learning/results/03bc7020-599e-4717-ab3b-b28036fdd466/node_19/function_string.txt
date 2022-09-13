@@ -1,0 +1,6 @@
+@ct.electron
+def classical_contrastive_loss(margin=2):
+    contrastive_loss = ClassicalContrastiveLoss(margin)
+    return contrastive_loss
+
+

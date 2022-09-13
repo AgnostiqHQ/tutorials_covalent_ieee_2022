@@ -1,0 +1,29 @@
+@ct.lattice
+def classical_workflow(train_path, test_path, train_batch, pytorch_optimizer, epochs, lr, print_intermediate, test_num_dat):
+
+    # Load training dataset
+    folder_dataset, transformation = file_to_pytorch_transform(train_path)
+    dataset = similarity_learning_dataset(folder_dataset, transformation)
+    dataloader_train = torch_dataloader(dataset, train_batch)
+
+    # Load testing dataset
+    folder_dataset, transformation = file_to_pytorch_transform(test_path)
+    dataset = similarity_learning_dataset(folder_dataset, transformation)
+    dataloader_test = torch_dataloader(dataset, 1, False)
+
+    # Siamese network initialization
+    contrastive_loss = classical_contrastive_loss()
+
+    # Train the network
+    trained_net, loss_history = train_classical_siamese_network(torch_optim=pytorch_optimizer,#torch.optim.Adam,
+                                                               train_dataloader=dataloader_train,
+                                                               loss_function=contrastive_loss,
+                                                               epochs=epochs,
+                                                               print_intermediate=print_intermediate, lr=lr)
+    
+    # Perform predictions on testing data with the trained network
+    results = get_testing_results(dataloader_test, trained_net, num_dat=test_num_dat)
+    
+    return results, loss_history, trained_net
+
+

@@ -1,0 +1,6 @@
+@ct.electron 
+def init_classical_siamese_network():
+    net = SiameseNetwork()
+    return net
+
+

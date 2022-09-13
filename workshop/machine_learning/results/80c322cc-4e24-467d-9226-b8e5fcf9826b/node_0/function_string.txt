@@ -1,0 +1,12 @@
+@ct.electron
+def file_to_pytorch_transform(file_root_dir, transform_dims=(2, 2)):
+    # Load the training dataset
+    folder_dataset = datasets.ImageFolder(root=file_root_dir)
+
+    # Resize the images and transform to tensors
+    transformation = transforms.Compose([transforms.Resize(transform_dims),
+                                     transforms.ToTensor()
+                                    ])
+    return folder_dataset, transformation
+
+

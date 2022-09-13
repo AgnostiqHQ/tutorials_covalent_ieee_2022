@@ -1,0 +1,12 @@
+@ct.electron
+def generate_left_right_transition(num_images):
+    image_pairs = []
+    left_image = torch.tensor([[[1.0, 0],
+                               [1.0, 0]]], requires_grad=False, dtype=torch.float32)
+    for intensity in torch.tensor(np.linspace(0, 1, num_images), requires_grad=False, dtype=torch.float32):
+        image = torch.tensor([[[1.0-intensity, intensity],
+                              [1.0-intensity, intensity]]], requires_grad=False, dtype=torch.float32)
+        image_pairs.append([left_image, image, 0]) # 2 is the label; different on purpose to previous
+    return image_pairs
+
+

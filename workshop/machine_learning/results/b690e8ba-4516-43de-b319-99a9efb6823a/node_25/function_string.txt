@@ -1,0 +1,30 @@
+@ct.electron
+def train_quantum_net(lr, init_params, dataloader_train, batch_cost_func, similarity_circuit, measure_bits, epochs):
+
+    opt=torch.optim.Adam(init_params, lr=lr)
+    dataiter=iter(dataloader_train)
+    alpha1, alpha2 = init_params
+
+    def closure():
+        opt.zero_grad()
+        loss = batch_cost_func(next(dataiter), alpha1, alpha2, 
+                               similarity_circuit=similarity_circuit,
+                               wires=dev.wires, measure_bits=measure_bits)
+        loss.backward()
+        return loss
+    
+    counter = []
+    loss_history = [] 
+    iteration_number = 0
+    for epoch in range(epochs):
+        dataiter = iter(dataloader_train)
+        for i in range(len(dataloader_train)):
+            loss = opt.step(closure)
+        if epoch % 10 == 0:
+            print(f"Epoch number {epoch}\n Current loss {loss.item()}\n")
+        iteration_number += 1
+        counter.append(iteration_number)
+        loss_history.append(loss.item())   
+    return loss_history, opt
+
+

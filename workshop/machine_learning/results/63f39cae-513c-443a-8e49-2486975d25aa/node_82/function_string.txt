@@ -1,0 +1,12 @@
+@ct.electron
+def get_accuracy_score(results_tuples):
+    # Process the (label, prob, prediciton) tuple and return an accuracy percentage
+    correct_counter = 0
+    for result in results_tuples:
+        if result[0] == result[1]: # Label matches prediction
+            correct_counter += 1
+        else:
+            continue
+    return 100*correct_counter/len(results_tuples)
+
+

@@ -1,0 +1,11 @@
+@ct.electron
+def get_training_results(dataloader_test, trained_net):
+    results = []
+    iterable = iter(dataloader_test)
+    for i in range(5):
+        x1, x2, label = next(iterable)
+        scaled_dist, prediction = get_similarity(x1, x2, trained_net)
+        results.append([label.item(), scaled_dist.item(), prediction.item()])
+    return results
+
+

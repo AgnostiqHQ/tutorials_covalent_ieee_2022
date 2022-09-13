@@ -1,0 +1,35 @@
+@ct.lattice
+def classical_workflow():
+
+    # Load training dataset
+    folder_dataset, transformation = file_to_pytorch_transform('./data/pixel_grid/training/')
+    dataset = similarity_learning_dataset(folder_dataset, transformation)
+    dataloader_train = torch_dataloader(dataset, 8)
+
+    # Load testing dataset
+    folder_dataset, transformation = file_to_pytorch_transform('./data/pixel_grid/testing/')
+    dataset = similarity_learning_dataset(folder_dataset, transformation)
+    dataloader_test = torch_dataloader(dataset, 1)
+
+    # Siamese network initialization
+    net = init_classical_siamese_network()
+    contrastive_loss = classical_contrastive_loss()
+
+    # # Train the network
+    # trained_net, loss_history = train_classical_siamese_network(optimizer=optim.Adam(net.parameters(), lr=0.0005),
+    #                                                         train_dataloader=dataloader_train,
+    #                                                         network=net,
+    #                                                         loss_function=contrastive_loss,
+    #                                                         epochs=100,
+    #                                                         print_intermediate=False)
+    
+    # Perform predictions on testing data with the trained network
+    # results = []
+    # iterable = iter(dataloader_test)
+    # for i in range(5):
+    #     x1, x2, label = next(iterable)
+    #     scaled_dist, prediction = get_similarity(x1, x2, trained_net)
+    #     results.append([label.item(), scaled_dist.item(), prediction.item()])
+    return
+
+

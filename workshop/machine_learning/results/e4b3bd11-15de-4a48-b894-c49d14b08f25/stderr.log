@@ -1,0 +1,4 @@
+/Users/jbaker/opt/miniconda3/envs/algo-time-series/lib/python3.10/site-packages/torch/nn/modules/conv.py:453: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at  /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/native/Convolution.cpp:883.)
+  return F.conv2d(input, weight, bias, self.stride,
+/Users/jbaker/opt/miniconda3/envs/algo-time-series/lib/python3.10/site-packages/torch/nn/modules/conv.py:453: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at  /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/native/Convolution.cpp:883.)
+  return F.conv2d(input, weight, bias, self.stride,
