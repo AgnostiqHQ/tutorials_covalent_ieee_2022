@@ -1,4 +1,0 @@
-                def get_item(e, key):
-                    return e[key]
-
-

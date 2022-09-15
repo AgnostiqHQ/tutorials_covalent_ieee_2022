@@ -1,4 +1,0 @@
-            def get_attr(e, attr):
-                return getattr(e, attr)
-
-

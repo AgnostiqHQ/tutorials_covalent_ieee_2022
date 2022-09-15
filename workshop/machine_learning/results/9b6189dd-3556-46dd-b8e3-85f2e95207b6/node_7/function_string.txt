@@ -1,6 +1,0 @@
-@ct.electron
-def torch_dataloader(dataset, batch_size, shuffle=True):
-    dataloader = DataLoader(dataset, shuffle=shuffle, batch_size=batch_size)
-    return dataloader
-
-

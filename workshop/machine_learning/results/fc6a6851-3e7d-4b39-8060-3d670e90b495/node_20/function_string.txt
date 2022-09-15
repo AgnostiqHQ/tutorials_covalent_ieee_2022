@@ -1,6 +1,0 @@
-@ct.electron
-def get_optimizer(lr, net):
-    opt = optim.Adam(net.parameters(), lr=lr)
-    return opt
-
-
