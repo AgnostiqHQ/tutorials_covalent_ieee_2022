@@ -1,6 +1,0 @@
-main.cc
-setup.py
-cpparthimetic.egg-info/PKG-INFO
-cpparthimetic.egg-info/SOURCES.txt
-cpparthimetic.egg-info/dependency_links.txt
-cpparthimetic.egg-info/top_level.txt
