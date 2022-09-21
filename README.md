@@ -50,3 +50,11 @@ From the top drop-down menu, select `kernel > change kernel > ieee_covalent`. Yo
 
 
 
+
+### Virtual environment
+
+```shell
+conda create -n ieee python=3.8
+conda activate ieee
+pip install -r requirements.txt
+```

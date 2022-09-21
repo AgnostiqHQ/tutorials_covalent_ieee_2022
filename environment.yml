@@ -1,0 +1,6 @@
+name: ieee
+dependencies:
+  - python==3.8.13
+  - pip
+  - pip:
+    - -r requirements.txt
