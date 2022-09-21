@@ -34,9 +34,19 @@ Now, install the `conda` environment with
 
 This will install the `ieee_covalent` environment. Let's activate it
 
-`conda activate ieee_covalent`
+`> conda activate ieee_covalent`
 
-And that's all! 
+If you are confident with making this environment visible to your existing Jupyter Notebook viewer, you are done! If not, please continue with
+
+`> python -m ipykernel install --user --name=ieee_covalent`
+
+then issue
+
+`> jupyter notebook %`
+
+which will open a browser window in the Jupyter explorer. Navigate to the `*.ipynb` file you are interested in looking at within this repo and click it.
+
+From the top drop-down menu, select `kernel > change kernel > ieee_covalent`. You are now good to go!
 
 
 
