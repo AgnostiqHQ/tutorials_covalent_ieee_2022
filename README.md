@@ -47,14 +47,3 @@ then issue
 which will open a browser window in the Jupyter explorer. Navigate to the `*.ipynb` file you are interested in looking at within this repo and click it.
 
 From the top drop-down menu, select `kernel > change kernel > ieee_covalent`. You are now good to go!
-
-
-
-
-### Virtual environment
-
-```shell
-conda create -n ieee python=3.8
-conda activate ieee
-pip install -r requirements.txt
-```
