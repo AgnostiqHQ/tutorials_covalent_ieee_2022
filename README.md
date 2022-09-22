@@ -14,7 +14,7 @@ You will find:
 
 2. Jupyter notebooks needed for the hands-on workshop (`workshop/machine_learning/similarity_learning.ipynb`)
 
-3. [Venkat insert other stuff please]
+3. `code_examples` contains several simple examples different features/aspects of Covalent
 
 ## Install instructions
 
