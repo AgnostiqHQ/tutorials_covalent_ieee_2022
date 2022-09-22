@@ -1,7 +1,0 @@
-name: curve_fitting
-dependencies:
-  - python=3.8
-  - ipykernel
-  - pip
-  - pip:
-    - -r requirements.txt
