@@ -24,7 +24,7 @@ First, clone or download this repository to your local machine.
 
 Next, if you don't already have conda, navigate to <https://conda.io/projects/conda/en/latest/user-guide/install/download.html> and install the correct version for your OS for either Miniconda or Anaconda.
 
-In a terminal window, navigate to root directory of this repo (`~ieee_covalent`) issue
+In a terminal window, navigate to root directory of this repo (`~tutorials_covalent_ieee_2022`) and issue
 
 `> conda env create -f environment.yml`
 
