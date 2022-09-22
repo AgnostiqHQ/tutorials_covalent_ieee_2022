@@ -47,3 +47,18 @@ then issue
 which will open a browser window in the Jupyter explorer. Navigate to the `*.ipynb` file you are interested in looking at within this repo and click it.
 
 From the top drop-down menu, select `kernel > change kernel > ieee_covalent`. You are now good to go!
+
+
+### Start Covalent
+
+After successfully creating the conda environment, the Covalent server can be started as follows
+
+```bash
+covalent start --ignore-migrations
+```
+
+Covalent can optionally be started in debug mode for more verbose logging as follows
+
+```bash
+covalent start -d --ignore-migrations
+```
