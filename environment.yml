@@ -1,6 +1,6 @@
 name: ieee_covalent
 dependencies:
-  - python==3.8.13
+  - python=3.8
   - pip
   - pip:
     - -r requirements.txt
