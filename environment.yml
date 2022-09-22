@@ -1,4 +1,4 @@
-name: ieee
+name: ieee_covalent
 dependencies:
   - python==3.8.13
   - pip
