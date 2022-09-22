@@ -42,7 +42,7 @@ If you are confident with making this environment visible to your existing Jupyt
 
 then issue
 
-`> jupyter notebook %`
+`> jupyter notebook &`
 
 which will open a browser window in the Jupyter explorer. Navigate to the `*.ipynb` file you are interested in looking at within this repo and click it.
 
