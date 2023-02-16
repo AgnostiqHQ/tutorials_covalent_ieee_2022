@@ -106,7 +106,7 @@ uvloop==0.17.0
 watchfiles==0.17.0
 wcwidth==0.2.5
 websockets==10.3
-Werkzeug==2.0.3
+Werkzeug==2.2.3
 wheel==0.37.1
 yarl==1.8.1
 zict==2.2.0
